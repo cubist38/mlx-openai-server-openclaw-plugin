@@ -1,0 +1,54 @@
+{
+  "name": "@cubist38/mlx-openai-server-openclaw-plugin",
+  "version": "0.1.0",
+  "description": "OpenClaw provider plugin for MLX OpenAI Server",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubist38/mlx-openai-server-openclaw-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cubist38/mlx-openai-server-openclaw-plugin/issues"
+  },
+  "homepage": "https://github.com/cubist38/mlx-openai-server-openclaw-plugin#readme",
+  "files": [
+    "api.ts",
+    "defaults.ts",
+    "index.ts",
+    "models.ts",
+    "openclaw.plugin.json",
+    "register.runtime.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.3.24-beta.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "providers": [
+      "mlx-openai-server"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2",
+      "minGatewayVersion": "2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.3.24-beta.2",
+      "pluginSdkVersion": "2026.3.24-beta.2"
+    }
+  }
+}

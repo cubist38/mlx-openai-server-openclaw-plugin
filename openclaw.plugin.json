@@ -1,0 +1,43 @@
+{
+  "id": "mlx-openai-server",
+  "name": "MLX OpenAI Server",
+  "description": "Apple Silicon self-hosted OpenAI-compatible model provider for OpenClaw.",
+  "version": "0.1.0",
+  "providers": ["mlx-openai-server"],
+  "modelSupport": {
+    "modelPrefixes": ["mlx-openai-server/"]
+  },
+  "providerAuthEnvVars": {
+    "mlx-openai-server": ["MLX_OPENAI_SERVER_API_KEY"]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "mlx-openai-server",
+      "method": "custom",
+      "choiceId": "mlx-openai-server",
+      "choiceLabel": "MLX OpenAI Server",
+      "choiceHint": "Apple Silicon self-hosted OpenAI-compatible server",
+      "groupId": "mlx-openai-server",
+      "groupLabel": "MLX OpenAI Server",
+      "groupHint": "Apple Silicon local MLX inference",
+      "onboardingScopes": ["text-inference"]
+    }
+  ],
+  "uiHints": {
+    "apiKey": {
+      "label": "API key",
+      "help": "Any non-empty value works when your local MLX OpenAI Server does not enforce authentication.",
+      "placeholder": "mlx-local",
+      "sensitive": true
+    },
+    "baseUrl": {
+      "label": "Base URL",
+      "placeholder": "http://127.0.0.1:8000/v1"
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
