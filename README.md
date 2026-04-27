@@ -113,6 +113,7 @@ Publish from this repository checkout:
 clawhub package publish . \
   --family code-plugin \
   --source-repo cubist38/mlx-openai-server-openclaw-plugin \
+  --source-commit "$(git rev-parse HEAD)" \
   --source-ref main \
   --changelog "Initial MLX OpenAI Server provider plugin"
 ```
