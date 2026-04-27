@@ -99,16 +99,22 @@ Use explicit config when the server is not running on the default loopback URL, 
 
 ## Publish
 
-Dry run:
+Install and authenticate the ClawHub CLI first:
 
 ```bash
-clawhub package publish cubist38/mlx-openai-server-openclaw-plugin --dry-run
+npm i -g clawhub
+clawhub login
+clawhub whoami
 ```
 
-Publish:
+Publish from this repository checkout:
 
 ```bash
-clawhub package publish cubist38/mlx-openai-server-openclaw-plugin
+clawhub package publish . \
+  --family code-plugin \
+  --source-repo cubist38/mlx-openai-server-openclaw-plugin \
+  --source-ref main \
+  --changelog "Initial MLX OpenAI Server provider plugin"
 ```
 
 ## Development
